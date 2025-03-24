@@ -48,7 +48,7 @@ class Manager{
     nextQuestion(answer){
         this.#selectedAnswer[this.#currentQuestionNumber] = answer;
         this.#currentQuestionNumber++;
-        if(this.#currentQuestionNumber >= this.#array.length){
+        if(this.#currentQuestionNumber < this.#array.length){
             this.#nextQuestionCallback(this.#array[this.#currentQuestionNumber].questionText);
             this.#nextAnswersCallback(this.#array[this.#currentQuestionNumber].answers);
         }

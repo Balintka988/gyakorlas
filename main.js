@@ -60,5 +60,6 @@ for(const i of array){
 console.log(tomb);
 
 const manager = new Manager(tomb);
-const question = new QuestionArea('question');
-const answer = new AnswerArea('answer');
+const question = new QuestionArea('question', manager);
+const answer = new AnswerArea('answer', manager);
+manager.start();
