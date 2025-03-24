@@ -59,5 +59,6 @@ for(const i of array){
 //kiiratás ellenőrzés gyanánt
 console.log(tomb);
 
+const manager = new Manager(tomb);
 const question = new QuestionArea('question');
 const answer = new AnswerArea('answer');
