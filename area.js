@@ -14,6 +14,13 @@ class Area{
         this.#div.className = cssClass;
         container.appendChild(this.#div)
 
+        manager.setFinishCallback((halott_penz) => {
+            container.innerHTML = "";
+            const divaa = document.createElement('div');
+            divaa.textContent = halott_penz;
+            container.appendChild(divaa);
+        })
+
         this.#manager = manager;
     }
 
@@ -47,6 +54,11 @@ class AnswerArea extends Area{
                 diva.className = "item";
                 diva.innerHTML = valasz;
                 this.div.appendChild(diva);
+
+                diva.addEventListener('click', () => {
+                    this.div.appendChild(diva);
+                    manager.nextQuestion(valasz);
+                })
             }
         })
     }
